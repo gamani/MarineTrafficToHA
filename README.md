@@ -19,8 +19,8 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   cors_allowed_origins:
-    - "http://192.168.137.2"  # Replace with the exact origin
-    - "https://kamehouze.duckdns.org"
+    - "http://192.168.137.2"  # Replace with the exact origin from where the extension is running. You can also see the console with cors error and find out the address.
+    - "https://xxx.duckdns.org" #your HA instance
 ```
 
 Replace the IP address and domain with those you use to access your HA instance.
