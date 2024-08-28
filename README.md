@@ -111,11 +111,11 @@ To allow the extension to send data to Home Assistant, you need to create an API
 5. **Enable Automatic Sending**:
    - Check the `Enable Automatic Sending` box to activate automatic data sending.
 
-6. **Test the Connection**:
-   - Click `Test Connection` to verify that the connection with Home Assistant is correctly established.
-
-7. **Save the Settings**:
+6. **Save the Settings**:
    - Click `Save Settings` to save your settings. A transmission will automatically be triggered when automatic sending is enabled.
+
+7. **Test the Connection**:
+   - Click `Test Connection` to verify that the connection with Home Assistant is correctly established.
 
 ### 3. **Getting Started**
 
