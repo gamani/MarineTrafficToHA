@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marine Traffic to Home Assistant</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #f0f4f8;
+            max-width: 500px; /* Augmentation de la largeur maximale */
+            min-width: 400px; /* Largeur minimale pour plus d'espace */
+            margin: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 20px; /* Ajout d'un espace entre le sous-titre et le formulaire */
+        }
+        
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"], input[type="password"], input[type="number"] {
+            width: calc(100% - 22px); /* Prendre en compte le padding */
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px; /* Ajout d'un espace entre les champs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #fff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: calc(100% - 22px); /* Prendre en compte le padding */
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #e9ecef;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .toggle-switch {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .toggle-switch input {
+            margin-left: 10px;
+            transform: scale(1.2);
+        }
+
+        #logs {
+            margin-top: 10px;
+            padding-left: 20px;
+            color: #555;
+            font-size: 12px;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+
+        #logs li {
+            margin-bottom: 5px;
+        }
+
+        .disclaimer {
+            font-size: 10px;
+            color: #888;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .disclaimer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .disclaimer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Marine Traffic to Home Assistant</h1>
+    <h2>by Alexandre Salem</h2>
+    
+    <label for="ha-url">Home Assistant URL:</label>
+    <input type="text" id="ha-url" placeholder="Enter your Home Assistant URL">
+    
+    <label for="ha-api-key">Home Assistant API Key:</label>
+    <input type="password" id="ha-api-key" placeholder="Enter your Home Assistant API Key">
+
+    <label for="interval">Interval (minutes):</label>
+    <input type="number" id="interval" min="1" value="60">
+
+    <label for="log-clean-interval">Auto-Clean Logs (days):</label> <!-- Nouveau champ pour auto-nettoyage -->
+    <input type="number" id="log-clean-interval" min="1" value="7">
+
+    <div class="toggle-switch">
+        <label for="auto-send">Enable Automatic Sending</label>
+        <input type="checkbox" id="auto-send">
+    </div>
+    
+    <button id="save-settings">Save Settings</button>
+    <button id="test-connection">Test Connection</button>
+    <button id="clear-logs">Clear Logs Now</button> <!-- Changement du nom du bouton -->
+
+    <div class="status" id="status">
+        <p>Status: <span style="color: #ff0000;">Not connected</span></p>
+        <p>Logs:</p>
+        <ul id="logs"></ul>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> This tool is provided "as is" without any warranties of any kind. Use it at your own risk. The developer, Alexandre Salem, assumes no responsibility for any issues arising from the use of this tool. Always ensure you are compliant with the terms of service of both Marine Traffic and Home Assistant.</p>
+        <p>For support, documentation, and more information, visit the official <a href="https://www.home-assistant.io" target="_blank">Home Assistant website</a>.</p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
