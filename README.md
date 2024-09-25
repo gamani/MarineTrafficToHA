@@ -4,7 +4,7 @@
 
 The **Marine Traffic to Home Assistant** extension scrapes data from your AIS web dashboard and transmits it to Home Assistant (HA) for seamless integration of maritime traffic information into your smart home system. This extension periodically sends data such as the number of vessels, the number of Class A and Class B vessels, uptime, a screenshot of the map encoded in base64 (PNG format), and other information directly to your HA instance.
 
-Work ONLY for web dashboards similar to RSK400Ni SRT - CX4
+Works ONLY for web dashboards similar to RSK400Ni SRT - CX4
 
 ![image](https://github.com/user-attachments/assets/85e73293-6543-4152-90a7-eeff736ebd67)
 
