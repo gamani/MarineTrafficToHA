@@ -64,7 +64,8 @@ var r=function(A,e){return(r=Object.setPrototypeOf||{__proto__:[]}instanceof Arr
                     scrollX: 0,
                     scrollY: -window.scrollY
                 }).then(canvas => {
-                    const mapImageDataUrl = canvas.toDataURL("image/png");
+                    //const mapImageDataUrl = canvas.toDataURL("image/png"); no more valid for HA as it exceeds size limit
+                    const mapImageDataUrl = canvas.toDataURL("image/jpeg", 0.5);
 
                     sendDataToHomeAssistant(homeAssistantBaseUrl, token, 'sensor.vessel_count', vesselCount, {
                         friendly_name: "Vessels",
